@@ -6,3 +6,7 @@
  Template:     cosimo
  Version:      1.0.0
 */
+
+body {
+    display:none !important;
+}

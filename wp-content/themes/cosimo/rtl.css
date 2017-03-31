@@ -177,6 +177,12 @@ aside ul.menu ul.sub-menu {
 	padding-left: 0em;
 	padding-right: 2em;
 }
+.widget.widget_search input[type="search"] {
+	float: right;
+}
+.widget.widget_search input[type="submit"] {
+	float: left;
+}
 @media (max-width: 767px) {
 	.widget-area {
 		top: inherit;

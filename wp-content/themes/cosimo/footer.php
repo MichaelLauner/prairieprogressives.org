@@ -8,7 +8,7 @@
  */
 ?>
 
-<?php 
+<?php
 		$facebookURL = get_theme_mod('cosimo_theme_options_facebookurl', '#');
 		$twitterURL = get_theme_mod('cosimo_theme_options_twitterurl', '#');
 		$googleplusURL = get_theme_mod('cosimo_theme_options_googleplusurl', '#');
@@ -25,13 +25,14 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info smallPart">
 			<div class="infoFoo">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cosimo' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cosimo' ), 'WordPress' ); ?></a>
+				<!--<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cosimo' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cosimo' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cosimo' ), '<a target="_blank" href="https://crestaproject.com/downloads/cosimo/" rel="nofollow" title="Cosimo Theme">Cosimo</a>', 'CrestaProject WordPress Theme' ); ?>
+				-->
+				Prarie Progress <?php echo date(Y); ?>
 			</div>
 			<div class="infoFoo right">
 				<div class="socialLine">
-					<?php if (!empty($facebookURL)) : ?>
+					<!--<?php if (!empty($facebookURL)) : ?>
 						<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'cosimo' ); ?>"><i class="fa fa-facebook spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'cosimo' ); ?></span></i></a>
 					<?php endif; ?>
 					<?php if (!empty($twitterURL)) : ?>
@@ -63,7 +64,7 @@
 					<?php endif; ?>
 					<?php if (!empty($snapchatURL)) : ?>
 						<a href="<?php echo esc_url($snapchatURL); ?>" title="<?php esc_attr_e( 'Snapchat', 'cosimo' ); ?>"><i class="fa fa-snapchat spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Snapchat', 'cosimo' ); ?></span></i></a>
-					<?php endif; ?>
+					<?php endif; ?>-->
 				</div>
 			</div>
 		</div><!-- .site-info -->

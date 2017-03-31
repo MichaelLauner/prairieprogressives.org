@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cosimo\n"
-"POT-Creation-Date: 2017-02-18 00:35+0100\n"
-"PO-Revision-Date: 2017-02-18 00:35+0100\n"
+"POT-Creation-Date: 2017-03-04 13:09+0100\n"
+"PO-Revision-Date: 2017-03-04 13:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -34,101 +34,111 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:45 index.php:42 search.php:41
+#: archive.php:45 index.php:42 search.php:46
 msgid "Previous"
 msgstr ""
 
-#: archive.php:46 index.php:43 search.php:42
+#: archive.php:46 index.php:43 search.php:47
 msgid "Next"
 msgstr ""
 
-#: archive.php:47 index.php:44 search.php:43
+#: archive.php:47 index.php:44 search.php:48
 #: template-parts/content-page.php:23 template-parts/content-single.php:26
 msgid "Page"
 msgstr ""
 
-#: comments.php:29
+#. translators: %s: post title
+#: comments.php:31
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:36
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:42
+#: comments.php:55
 msgid "Reply"
 msgstr ""
 
-#: comments.php:49
+#: comments.php:62
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:52
+#: comments.php:65
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:53
+#: comments.php:66
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:65
+#: comments.php:78
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:74
+#: comments.php:87
 msgid "Name *"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:88
 msgid "Email *"
 msgstr ""
 
-#: comments.php:76
+#: comments.php:89
 msgid "Website *"
 msgstr ""
 
-#: comments.php:76
+#: comments.php:89
 msgid "Website"
 msgstr ""
 
-#: comments.php:78
+#: comments.php:91
 msgid " Required fields are marked "
 msgstr ""
 
-#: comments.php:82
+#. translators: %s: wordpress login url
+#: comments.php:96
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:83
+#. translators: 1: profile user link, 2: username, 3: logout link
+#: comments.php:98
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: comments.php:84
+#: comments.php:99
 msgid "Your email address will not be published."
 msgstr ""
 
-#: comments.php:85
+#: comments.php:100
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:86
+#. translators: %s: name of person to reply
+#: comments.php:102
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:87
+#: comments.php:103
 msgid "Cancel reply"
 msgstr ""
 
-#: comments.php:88
+#: comments.php:104
 msgid "Post Comment"
 msgstr ""
 
-#: comments.php:89
+#: comments.php:105
 msgid "Comment *"
 msgstr ""
 
@@ -136,65 +146,67 @@ msgstr ""
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:28
+#. translators: %s: WordPress name
+#: footer.php:31
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:30
+#. translators: 1: theme name, 2: theme developer
+#: footer.php:37
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:35
+#: footer.php:43
 msgid "Facebook"
 msgstr ""
 
-#: footer.php:38
+#: footer.php:46
 msgid "Twitter"
 msgstr ""
 
-#: footer.php:41
+#: footer.php:49
 msgid "Google Plus"
 msgstr ""
 
-#: footer.php:44
+#: footer.php:52
 msgid "Linkedin"
 msgstr ""
 
-#: footer.php:47
+#: footer.php:55
 msgid "Instagram"
 msgstr ""
 
-#: footer.php:50
+#: footer.php:58
 msgid "YouTube"
 msgstr ""
 
-#: footer.php:53
+#: footer.php:61
 msgid "Pinterest"
 msgstr ""
 
-#: footer.php:56
+#: footer.php:64
 msgid "Tumblr"
 msgstr ""
 
-#: footer.php:59
+#: footer.php:67
 msgid "VK"
 msgstr ""
 
-#: footer.php:62
+#: footer.php:70
 msgid "Bloglovin"
 msgstr ""
 
-#: footer.php:65
+#: footer.php:73
 msgid "Snapchat"
 msgstr ""
 
-#: functions.php:56 header.php:36
+#: functions.php:49 header.php:36
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:96
 msgid "Sidebar"
 msgstr ""
 
@@ -210,7 +222,7 @@ msgstr ""
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:36 inc/admin/cosimo-admin-page.php:110
+#: inc/admin/cosimo-admin-page.php:36 inc/admin/cosimo-admin-page.php:115
 msgid "About"
 msgstr ""
 
@@ -226,198 +238,199 @@ msgstr ""
 msgid "Dismiss"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:92
+#. translators: 1: start option panel link, 2: end option panel link
+#: inc/admin/cosimo-admin-page.php:95
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Cosimo! To fully take advantage of the best "
 "our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:94
+#: inc/admin/cosimo-admin-page.php:99
 msgid "Get started with Cosimo"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:117
+#: inc/admin/cosimo-admin-page.php:122
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:119
+#: inc/admin/cosimo-admin-page.php:124
 msgid "View Demo"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:121
+#: inc/admin/cosimo-admin-page.php:126
 msgid "View PRO version Demo"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:123
+#: inc/admin/cosimo-admin-page.php:128
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:138
+#: inc/admin/cosimo-admin-page.php:143
 msgid "Free Vs PRO"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:141
+#: inc/admin/cosimo-admin-page.php:146
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:175
+#: inc/admin/cosimo-admin-page.php:180
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:176
+#: inc/admin/cosimo-admin-page.php:181
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:177
+#: inc/admin/cosimo-admin-page.php:182
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:181
+#: inc/admin/cosimo-admin-page.php:186
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:182
+#: inc/admin/cosimo-admin-page.php:187
 msgid "Please put it in our support forum."
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:183
+#: inc/admin/cosimo-admin-page.php:188
 msgid "Support"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:187
+#: inc/admin/cosimo-admin-page.php:192
 msgid "Need more features?"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:188 inc/admin/cosimo-admin-page.php:287
+#: inc/admin/cosimo-admin-page.php:193 inc/admin/cosimo-admin-page.php:292
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:189
+#: inc/admin/cosimo-admin-page.php:194
 msgid "Info about PRO version"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:195 inc/admin/cosimo-admin-page.php:203
+#: inc/admin/cosimo-admin-page.php:200 inc/admin/cosimo-admin-page.php:208
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:199
+#: inc/admin/cosimo-admin-page.php:204
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:215
+#: inc/admin/cosimo-admin-page.php:220
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:215
+#: inc/admin/cosimo-admin-page.php:220
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:218
+#: inc/admin/cosimo-admin-page.php:223
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:218
+#: inc/admin/cosimo-admin-page.php:223
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:235
+#: inc/admin/cosimo-admin-page.php:240
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:292
+#: inc/admin/cosimo-admin-page.php:297
 msgid "Features"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:293
+#: inc/admin/cosimo-admin-page.php:298
 msgid "Cosimo"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:294
+#: inc/admin/cosimo-admin-page.php:299
 msgid "Cosimo PRO"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:299
+#: inc/admin/cosimo-admin-page.php:304
 msgid "Responsive Design"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:304
+#: inc/admin/cosimo-admin-page.php:309
 msgid "Change Background"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:309 inc/admin/cosimo-admin-page.php:314
+#: inc/admin/cosimo-admin-page.php:314 inc/admin/cosimo-admin-page.php:319
 msgid "Unlimited Text Color"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:319
+#: inc/admin/cosimo-admin-page.php:324
 msgid "RTL Support"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:324
+#: inc/admin/cosimo-admin-page.php:329
 msgid "4 Post format"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:329
+#: inc/admin/cosimo-admin-page.php:334
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:334
+#: inc/admin/cosimo-admin-page.php:339
 msgid "Header Parallax"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:339
+#: inc/admin/cosimo-admin-page.php:344
 msgid "Portfolio"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:344 inc/customizer.php:280
+#: inc/admin/cosimo-admin-page.php:349 inc/customizer.php:280
 msgid "WooCommerce CSS Style"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:349
+#: inc/admin/cosimo-admin-page.php:354
 msgid "Posts Infinite Scroll"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:354
+#: inc/admin/cosimo-admin-page.php:359
 msgid "Header with YouTube Video"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:359 inc/customizer.php:277
+#: inc/admin/cosimo-admin-page.php:364 inc/customizer.php:277
 msgid "Loading Page"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:364 inc/customizer.php:276
+#: inc/admin/cosimo-admin-page.php:369 inc/customizer.php:276
 msgid "Font switcher"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:369
+#: inc/admin/cosimo-admin-page.php:374
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:374
+#: inc/admin/cosimo-admin-page.php:379
 msgid "9 Shortcodes"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:379 inc/customizer.php:285
+#: inc/admin/cosimo-admin-page.php:384 inc/customizer.php:285
 msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:384 inc/customizer.php:286
+#: inc/admin/cosimo-admin-page.php:389 inc/customizer.php:286
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:389 inc/customizer.php:287
+#: inc/admin/cosimo-admin-page.php:394 inc/customizer.php:287
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:394
+#: inc/admin/cosimo-admin-page.php:399
 msgid "Custom image for 404 page & search page"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:402
+#: inc/admin/cosimo-admin-page.php:407
 msgid "View PRO version demo"
 msgstr ""
 
-#: inc/admin/cosimo-admin-page.php:403
+#: inc/admin/cosimo-admin-page.php:408
 msgid "More Information"
 msgstr ""
 
@@ -573,41 +586,25 @@ msgstr ""
 msgid "More Info"
 msgstr ""
 
-#: inc/template-tags.php:28
-#, php-format
-msgctxt "post date"
-msgid "<i class=\"fa fa-clock-o spaceRight\"></i>%s"
-msgstr ""
-
-#: inc/template-tags.php:33
-#, php-format
-msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceLeftRight\"></i>%s"
-msgstr ""
-
-#: inc/template-tags.php:41
+#: inc/template-tags.php:34
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:41
+#: inc/template-tags.php:34
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:41
+#: inc/template-tags.php:34
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:56
-#, php-format
-msgid "%1$s"
-msgstr ""
-
-#: inc/template-tags.php:60 template-parts/content-page.php:32
+#: inc/template-tags.php:53 template-parts/content-page.php:32
 #: template-parts/content.php:45
 msgid "Edit"
 msgstr ""
 
-#: search.php:16
+#. translators: %s: search query
+#: search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -632,19 +629,20 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#. translators: %1$s: create new post link
+#: template-parts/content-none.php:23
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:29
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:34
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."

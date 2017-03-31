@@ -5,13 +5,6 @@
  * @package cosimo
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
 if ( ! function_exists( 'cosimo_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -82,6 +75,18 @@ endif; // cosimo_setup
 add_action( 'after_setup_theme', 'cosimo_setup' );
 
 /**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function cosimo_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'cosimo_content_width', 940 );
+}
+add_action( 'after_setup_theme', 'cosimo_content_width', 0 );
+
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -115,7 +120,6 @@ function cosimo_scripts() {
 	wp_enqueue_script( 'cosimo-nanoScroll', get_template_directory_uri() . '/js/jquery.nanoscroller.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'cosimo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'cosimo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'cosimo-imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'cosimo-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -146,6 +150,9 @@ add_filter( 'excerpt_length', 'cosimo_custom_excerpt_length', 999 );
  */
 if ( ! function_exists( 'cosimo_new_excerpt_more' ) ) {
 	function cosimo_new_excerpt_more( $more ) {
+		if ( is_admin() ) {
+			return $more;
+		}
 		return '&hellip;';
 	}
 }

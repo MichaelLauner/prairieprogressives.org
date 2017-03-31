@@ -25,6 +25,7 @@ class Cosimo_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 		add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 	}
 
 	/**
@@ -32,16 +33,19 @@ class Cosimo_Admin {
 	 */
 	public function admin_menu() {
 		$theme = wp_get_theme( get_template() );
-
-		$page = add_theme_page( esc_html__( 'About', 'cosimo' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'cosimo' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'cosimo-welcome', array( $this, 'welcome_screen' ) );
-		add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
+		global $cosimo_adminpage;
+		$cosimo_adminpage = add_theme_page( esc_html__( 'About', 'cosimo' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'cosimo' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'cosimo-welcome', array( $this, 'welcome_screen' ) );
 	}
 
 	/**
 	 * Enqueue styles.
 	 */
-	public function enqueue_styles() {
-
+	public function enqueue_admin_scripts() {
+		global $cosimo_adminpage;
+		$screen = get_current_screen();
+		if ( $screen->id != $cosimo_adminpage ) {
+			return;
+		}
 		wp_enqueue_style( 'cosimo-welcome', get_template_directory_uri() . '/inc/admin/welcome.css', array(), '1.0' );
 	}
 
@@ -70,14 +74,14 @@ class Cosimo_Admin {
 	public static function hide_notices() {
 		if ( isset( $_GET['cosimo-hide-notice'] ) && isset( $_GET['_cosimo_notice_nonce'] ) ) {
 			if ( ! wp_verify_nonce( $_GET['_cosimo_notice_nonce'], 'cosimo_hide_notices_nonce' ) ) {
-				wp_die( __( 'Action failed. Please refresh the page and retry.', 'cosimo' ) );
+				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'cosimo' ) );
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( __( 'Cheatin&#8217; huh?', 'cosimo' ) );
+				wp_die( esc_html__( 'Cheatin&#8217; huh?', 'cosimo' ) );
 			}
 
-			$hide_notice = sanitize_text_field( $_GET['cosimo-hide-notice'] );
+			$hide_notice = sanitize_text_field( wp_unslash($_GET['cosimo-hide-notice'] ));
 			update_option( 'cosimo_admin_notice_' . $hide_notice, 1 );
 		}
 	}
@@ -89,7 +93,12 @@ class Cosimo_Admin {
 		?>
 		<div id="message" class="updated cresta-message">
 			<a class="cresta-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'cosimo-hide-notice', 'welcome' ) ), 'cosimo_hide_notices_nonce', '_cosimo_notice_nonce' ) ); ?>"><?php esc_html_e( 'Dismiss', 'cosimo' ); ?></a>
-			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing Cosimo! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'cosimo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=cosimo-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p>
+			<?php
+			/* translators: 1: start option panel link, 2: end option panel link */
+			printf( esc_html__( 'Welcome! Thank you for choosing Cosimo! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'cosimo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=cosimo-welcome' ) ) . '">', '</a>' );
+			?>
+			</p>
 			<p class="submit">
 				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=cosimo-welcome' ) ); ?>"><?php esc_html_e( 'Get started with Cosimo', 'cosimo' ); ?></a>
 			</p>
@@ -108,11 +117,11 @@ class Cosimo_Admin {
 		<div class="cresta-theme-info">
 				<h1>
 					<?php esc_html_e('About', 'cosimo'); ?>
-					<?php echo $theme->get( 'Name' ) ." ". $theme->get( 'Version' ); ?>
+					<?php echo esc_html($theme->get( 'Name' )) ." ". esc_html($theme->get( 'Version' )); ?>
 				</h1>
 
 			<div class="welcome-description-wrap">
-				<div class="about-text"><?php echo $theme->display( 'Description' ); ?>
+				<div class="about-text"><?php echo esc_html($theme->display( 'Description' )); ?>
 				<p class="cresta-actions">
 					<a href="<?php echo esc_url( apply_filters( 'cosimo_pro_theme_url', 'https://crestaproject.com/downloads/cosimo/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'cosimo' ); ?></a>
 
@@ -132,7 +141,7 @@ class Cosimo_Admin {
 
 		<h2 class="nav-tab-wrapper">
 			<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'cosimo-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'cosimo-welcome' ), 'themes.php' ) ) ); ?>">
-				<?php echo $theme->display( 'Name' ); ?>
+				<?php echo esc_html($theme->display( 'Name' )); ?>
 			</a>
 			<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'cosimo-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">
 				<?php esc_html_e( 'Free Vs PRO', 'cosimo' ); ?>
@@ -148,7 +157,7 @@ class Cosimo_Admin {
 	 * Welcome screen page.
 	 */
 	public function welcome_screen() {
-		$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( $_GET['tab'] );
+		$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( wp_unslash($_GET['tab']) );
 
 		// Look for a {$current_tab}_screen method.
 		if ( is_callable( array( $this, $current_tab . '_screen' ) ) ) {
@@ -174,7 +183,7 @@ class Cosimo_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Theme Customizer', 'cosimo' ); ?></h3>
 						<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'cosimo' ) ?></p>
-						<p><a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'cosimo' ); ?></a></p>
+						<p><a href="<?php echo esc_url(admin_url( 'customize.php' )); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'cosimo' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -193,7 +202,7 @@ class Cosimo_Admin {
 						<h3>
 							<?php
 							esc_html_e( 'Translate', 'cosimo' );
-							echo ' ' . $theme->display( 'Name' );
+							echo ' ' . esc_html($theme->display( 'Name' ));
 							?>
 						</h3>
 						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'cosimo' ) ?></p>
@@ -201,7 +210,7 @@ class Cosimo_Admin {
 							<a target="_blank" href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/cosimo/' ); ?>" class="button button-secondary">
 								<?php
 								esc_html_e( 'Translate', 'cosimo' );
-								echo ' ' . $theme->display( 'Name' );
+								echo ' ' . esc_html($theme->display( 'Name' ));
 								?>
 							</a>
 						</p>

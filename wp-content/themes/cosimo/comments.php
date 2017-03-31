@@ -25,11 +25,24 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
+			$comments_number = get_comments_number();
+			if ( '1' === $comments_number ) {
+				/* translators: %s: post title */
+				printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'cosimo' ), get_the_title() );
+			} else {
 				printf(
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'cosimo' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
+					/* translators: 1: number of comments, 2: post title */
+					_nx(
+						'%1$s thought on &ldquo;%2$s&rdquo;',
+						'%1$s thoughts on &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'cosimo'
+					),
+					number_format_i18n( $comments_number ),
+					get_the_title()
 				);
+			}
 			?>
 		</h2>
 
@@ -79,10 +92,13 @@ if ( post_password_required() ) {
 	?>
 	<?php comment_form( array(
 		'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+		/* translators: %s: wordpress login url */
 		'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' , 'cosimo' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+		/* translators: 1: profile user link, 2: username, 3: logout link */
 		'logged_in_as' => '<p class="logged-in-as smallPart">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'  , 'cosimo' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
 		'comment_notes_before' => '<p class="comment-notes smallPart">' . __( 'Your email address will not be published.'  , 'cosimo' ) . ( $req ? $required_text : '' ) . '</p>',
 		'title_reply' => __( 'Leave a Reply'  , 'cosimo' ),
+		/* translators: %s: name of person to reply */
 		'title_reply_to' => __( 'Leave a Reply to %s'  , 'cosimo' ),
 		'cancel_reply_link' => __( 'Cancel reply'  , 'cosimo' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'cosimo' ),

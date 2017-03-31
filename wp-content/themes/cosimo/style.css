@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/cosimo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
 Description: Cosimo is fresh & beautiful responsive WordPress Blog Theme, a large column in the center of the screen, and the sidebar that appears when you click on the appropriate button, unlimited colors and theme options. Demo here http://crestaproject.com/demo/cosimo/
-Version: 1.2.5
+Version: 100.2.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cosimo
@@ -713,7 +713,6 @@ a:active {
 	border-bottom: 1px solid rgba(0,0,0,.05);
 	font-weight: 400;
 	background: #ffffff;
-	height: 45px;
 	line-height: 45px;
 	text-align: left;
 	-o-transition: color .3s ease-in-out, background .3s ease-in-out;
@@ -741,12 +740,12 @@ a:active {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
-.main-navigation ul li:hover > a, 
-.main-navigation ul li.focus > a, 
-.main-navigation ul li.current-menu-item > a, 
-.main-navigation ul li.current-menu-parent > a, 
+.main-navigation ul li:hover > a,
+.main-navigation ul li.focus > a,
+.main-navigation ul li.current-menu-item > a,
+.main-navigation ul li.current-menu-parent > a,
 .main-navigation ul li.current-page-ancestor > a,
-.main-navigation .current_page_item > a, 
+.main-navigation .current_page_item > a,
 .main-navigation .current_page_parent > a {
 	background: #5b5b5b;
 	color: #ffffff;
@@ -764,7 +763,7 @@ a:active {
 		background: #ffffff;
 		width: 100%;
 	}
-	
+
 	.main-navigation.toggled .nav-menu {
 		border: 2px solid #eb911c;
 		border-top: none !important;
@@ -788,7 +787,7 @@ a:active {
 	.main-navigation.toggled .menu-toggle	{
 		color: #eb911c;
 	}
-	
+
 	.main-navigation {
 		position: absolute;
 	}
@@ -796,28 +795,28 @@ a:active {
 	.main-navigation ul, .main-navigation div > ul > li > ul::before, .main-navigation div > ul > li > ul::after {
 		display: none;
 	}
-	
+
 	.main-navigation ul li {
 		display: block;
 		width: 100%;
 	}
-	
+
 	.main-navigation ul li:hover > a,
 	.main-navigation ul li.focus > a {
 		background: inherit;
 		color: inherit;
 	}
-	
+
 	.main-navigation div > ul > li > ul {
 		padding-top: 0;
 	}
-	
+
 	.main-navigation li a:not(:last-child):after, .main-navigation ul ul li a:not(:last-child):after {
 		content: "" !important;
 		font-family: FontAwesome;
 		margin: 0 !important;
 	}
-	
+
 	.main-navigation ul li .indicator {
 		position: absolute;
 		right: 0;
@@ -836,7 +835,7 @@ a:active {
 	.main-navigation ul li .yesOpen.indicator:before {
 		content: "\f068";
 	}
-	
+
 	.main-navigation ul ul, .main-navigation ul ul ul {
 		float: none !important;
 		position: relative;
@@ -852,18 +851,18 @@ a:active {
 		z-index: 9;
 		background: none !important;
 	}
-	
+
 	.main-navigation ul ul.active, .main-navigation ul ul ul.active {
 		display: block;
 	}
-	
+
 	.main-navigation a {
 		border-bottom: 1px solid rgba(0,0,0,.05);
 		text-align: left;
 		padding: 1em;
 		line-height: inherit;
 	}
-	
+
 	.main-navigation ul ul a {
 		width: 100%;
 		height: auto;
@@ -1014,14 +1013,16 @@ a:active {
 #page.site:after,
 footer.entry-footer:before,
 footer.entry-footer:after,
-.widget_archive li:before, 
-.widget_archive li:after, 
+.widget_archive li:before,
+.widget_archive li:after,
 .widget_categories li:before,
 .widget_categories li:after,
 .nav-links:before,
 .nav-links:after,
 .site-info:before,
-.site-info:after {
+.site-info:after,
+.widget.widget_search:before,
+.widget.widget_search:after {
 	content: "";
 	display: table;
 }
@@ -1034,10 +1035,11 @@ footer.entry-footer:after,
 .site-footer:after,
 #page.site:after,
 footer.entry-footer:after,
-.widget_archive li:after, 
+.widget_archive li:after,
 .widget_categories li:after,
 .nav-links:after,
-.site-info:after {
+.site-info:after,
+.widget.widget_search:after {
 	clear: both;
 }
 
@@ -1051,11 +1053,6 @@ footer.entry-footer:after,
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
-}
-
-/* Search widget. */
-.widget_search .search-submit {
-	display: none;
 }
 
 /* Calendar Widget */
@@ -1172,6 +1169,22 @@ aside ul.menu .indicatorBar:before {
 }
 aside ul.menu .indicatorBar.yesOpenBar:before {
 	content: "\f106";
+}
+/* Search widget */
+.widget.widget_search input[type="search"] {
+	width: 68%;
+    display: inline-block;
+    -webkit-appearance: none;
+    padding: 4px 15px;
+    line-height: 1;
+	float: left;
+	height: 42px;
+}
+.widget.widget_search input[type="submit"] {
+	width: 32%;
+    display: inline-block;
+	float: right;
+	height: 42px;
 }
 
 /*--------------------------------------------------------------
@@ -1469,7 +1482,7 @@ body.featOpen header.site-header {
 .entry-featuredImg img {
 	width: 100%;
 	display: block;
-	opacity: 0; 
+	opacity: 0;
 }
 
 .entry-featuredImg a img {

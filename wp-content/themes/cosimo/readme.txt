@@ -48,6 +48,14 @@ one-column, right-sidebar, responsive-layout, custom-menu, custom-colors, sticky
 3. Log into your WP admin panel and click on the Design tab. Now click on the Cosimo theme to activate it.
 
 == Changelog ==
+= Version 1.2.7 =
+* Minor bug fixes
+
+= Version 1.2.6 =
+* Improved search widget CSS
+* Fixed some strings escaping
+* Minor bug fixes
+
 = Version 1.2.5 =
 * Now Cosimo is no longer compatible with WordPress 4.3 version or lower
 * Added icons to Categories Widget and Archives Widget

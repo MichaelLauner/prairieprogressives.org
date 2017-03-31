@@ -23,21 +23,14 @@ function cosimo_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+	
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-	$posted_on = sprintf(
-		_x( '<i class="fa fa-clock-o spaceRight"></i>%s', 'post date', 'cosimo' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceLeftRight"></i>%s', 'post author', 'cosimo' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on"><i class="fa fa-clock-o spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceLeftRight" aria-hidden="true"></i>' . $byline . '</span>'; // WPCS: XSS OK.
 	
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo ' <span class="comments-link"><i class="fa fa-comments-o spaceLeftRight"></i>';
+		echo ' <span class="comments-link"><i class="fa fa-comments-o spaceLeftRight" aria-hidden="true"></i>';
 		comments_popup_link( esc_html__( 'Leave a comment', 'cosimo' ), esc_html__( '1 Comment', 'cosimo' ), esc_html__( '% Comments', 'cosimo' ) );
 		echo '</span>';
 	}
@@ -53,7 +46,7 @@ function cosimo_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		$tags_list = get_the_tag_list( '', ', ' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight"></i>' . esc_html__( '%1$s', 'cosimo' ) . '</span>', $tags_list );
+			echo '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>';
 		}
 	}
 
@@ -68,7 +61,7 @@ if ( ! function_exists( 'cosimo_entry_categories' ) ) :
 function cosimo_entry_categories() {
 		$categories_list = get_the_category_list( ' / ' );
 		if ( $categories_list && cosimo_categorized_blog() ) {
-			printf( '<span class="cat-links">%1$s</span>', $categories_list );
+			echo '<span class="cat-links">' . $categories_list . '</span>';
 		}
 }
 endif;
@@ -79,29 +72,24 @@ endif;
  * @return bool
  */
 function cosimo_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'cosimo_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'cosimo_categories' );
+	
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$categories = get_categories( array(
 			'fields'     => 'ids',
 			'hide_empty' => 1,
-
 			// We only need to know if there is more than one category.
 			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = count( $categories );
 
 		set_transient( 'cosimo_categories', $all_the_cool_cats );
 	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so cosimo_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so cosimo_categorized_blog should return false.
-		return false;
-	}
+	
+	return $all_the_cool_cats > 1;
 }
 
 /**
