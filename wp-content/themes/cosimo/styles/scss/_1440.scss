@@ -1,0 +1,242 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+// .site {
+//     max-width: 1440px;
+//     margin:0 auto;
+// }
+
+/* 1440 =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+
+.acf-map {
+	height: 390px;
+}
+
+// 6. LAYOUT 				==============================
+
+//========================
+// Main Menu
+//========================
+.main-menu-section {
+    .navigation-pannel {
+        .navigation-panel-container {
+            .menu {
+                ul {
+                    li {
+                        a {
+							@include font-size(20);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//========================
+// Sidebar
+//========================
+.site-body-with-sidebar {
+    .site-main {
+        width: 73%;
+        margin-right: 2%;
+        float: left;
+    }
+    .sidebar {
+        width: 25%;
+        float: left;
+    }
+}
+
+.sidebar-nav {
+    .sidebar-nav-inner {
+        padding: 30px;
+	}
+}
+
+
+//========================
+// Home Page
+//========================
+.home-page-slider {
+	height: 480px;
+    .home-page-slider-inner {
+		height: 480px;
+		position: relative;
+        ul {
+            width: 340px;
+			margin:0;
+			padding:0;
+            li {
+				padding: 0 10px;
+				height: 90px;
+				line-height: 90px;
+				box-sizing: border-box;
+				justify-content: flex-start;
+                span.slide-icon {
+                    width: 70px;
+                    i {
+                        @include font-size(70);
+                    }
+                }
+                span.slide-text {
+					margin-left: 15px;
+					display: inline-block;
+					vertical-align: middle;
+					line-height: normal;
+                }
+            }
+        }
+        .home-page-slides {
+            margin: 0 0 5px 0;
+            height: 480px;
+			width: 1060px;
+			position: absolute;
+			@media only screen and (min-width: 1460px) {
+				width: 1080px;
+			}
+            .home-slide {
+                height: 480px;
+                .home-slide-content {
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+.home-page-bottom {
+	display: block;
+	justify-content: space-between;
+	.home-page-jump-links {
+		width: 32%;
+		display: block;
+		float: left;
+		margin-right: 2%;
+		.home-page-jump-link {
+			width: 100%;
+			padding: 0;
+			max-width: 465px;
+			display: flex;
+			.link-icon {
+				flex:1;
+                display: block;
+				min-width: 60px;
+				padding: 20px 0;
+				width: 15%;
+				float: left;
+				margin: 0 4%;
+            }
+            .link-text {
+				flex: 3;
+                padding: 10px 15px;
+                display: block;
+				width: 54%;
+				float: left;
+                h5 {
+                    @include font-size(22);
+                    margin:0;
+                    color:$crmc-green;
+					text-align: left;
+                }
+                p {
+                    margin:0;
+                    color:$crmc-green;
+					text-align: left;
+                }
+            }
+            .link-arrow {
+				flex:1;
+                width: 23%;
+				height: auto;
+				position: relative;
+                float: right;
+                background: url(../images/home-link-arrow.png) center no-repeat $crmc-grey;
+            }
+            &:hover {
+                text-decoration: none;
+                h5,p {
+                    text-decoration: none;
+                }
+                .link-arrow {
+                    background: url(../images/home-link-arrow-hover.png) center no-repeat $crmc-green;
+                }
+            }
+		}
+	}
+	.testimonial-box {
+		width: 66%;
+		float: left;
+	}
+}
+
+//========================
+// Search Results
+//========================
+.crmc-search-results {
+    .search-result {
+        width: 33.3%;
+    }
+}
+
+//========================
+// Locations Page
+//========================
+.location-list {
+	width: 1440px;
+	max-width: 1440px;
+}
+
+.site-body-with-sidebar {
+	.location-list {
+		width: auto;
+		.location-card {
+		    width: 252px;
+		}
+	}
+}
+
+
+//========================
+// Services Page
+//========================
+.service-list {
+	width: 1440px;
+	max-width: 1440px;
+}
+
+.site-body-with-sidebar {
+	.service-list {
+		width: auto;
+		.service-card {
+		    width: 252px;
+		}
+	}
+}
+
+//========================
+// Providers Page
+//========================
+.provider-list {
+    max-width: 1440px;
+	.provider-card {
+		width: 195px;
+		min-height: 350px;
+	}
+}
+
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================

@@ -8,6 +8,7 @@
 				//var windowHeight = $(window).innerHeight() / 1.5;
 				var windowHeight = 330;
 				$('.site-header').css('height', windowHeight);
+				$('.site-header').css('background-position', 'center center');
 			};
 			setHeight();
 			function setNano() {

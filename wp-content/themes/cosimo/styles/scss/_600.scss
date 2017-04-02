@@ -1,0 +1,79 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+// .site {
+//     max-width: 600px;
+//     margin:0 auto;
+// }
+
+/* 600 =================================================== */
+
+// 1. ROOT 					==============================
+
+//========================
+// WP Base
+//========================
+.alignleft,
+.alignleft{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.alignright,
+.alignright{
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+// 6. LAYOUT 				==============================
+
+//========================
+// Locations Page
+//========================
+.location-list {
+	width: auto;
+	max-width: 570px;
+    .location-card {
+		width: 275px;
+		margin:5px;
+		float: left;
+		.location-card-inner {
+            .location-card-text {
+                h6 {
+                    min-height: 100px;
+                    background: url(../images/address-icon.png) 0 3px no-repeat;
+                    padding-left: 35px;
+				}
+			}
+		}
+    }
+}
+
+//========================
+// Services Page
+//========================
+.service-list {
+	width: auto;
+	max-width: 570px;
+    .service-card {
+		width: 275px;
+		margin:5px;
+		float: left;
+    }
+}
+
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================

@@ -125,7 +125,7 @@ function cosimo_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
+
 	wp_enqueue_script( 'cosimo-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3', false );
 	wp_script_add_data( 'cosimo-html5shiv', 'conditional', 'lt IE 9' );
 }
@@ -150,9 +150,6 @@ add_filter( 'excerpt_length', 'cosimo_custom_excerpt_length', 999 );
  */
 if ( ! function_exists( 'cosimo_new_excerpt_more' ) ) {
 	function cosimo_new_excerpt_more( $more ) {
-		if ( is_admin() ) {
-			return $more;
-		}
 		return '&hellip;';
 	}
 }
@@ -197,3 +194,43 @@ if ( is_admin() ) {
  * Load PRO Button in the customizer
  */
 require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/class-customize.php' );
+
+
+//====================================================
+// Register Custom Post Type Organization
+//====================================================
+function custom_post_type_organization() {
+  $labels = array(
+    'name' => _x('Organizations', 'post type general name', 'your_text_domain'),
+    'singular_name' => _x('Organization', 'post type singular name', 'your_text_domain'),
+    'add_new' => _x('Add New', 'Organization', 'your_text_domain'),
+    'add_new_item' => __('Add New Organization', 'your_text_domain'),
+    'edit_item' => __('Edit Organization', 'your_text_domain'),
+    'new_item' => __('New Organization', 'your_text_domain'),
+    'all_items' => __('All Organizations', 'your_text_domain'),
+    'view_item' => __('View Organization', 'your_text_domain'),
+    'search_items' => __('Search Organizations', 'your_text_domain'),
+    'not_found' =>  __('No Organizations found', 'your_text_domain'),
+    'not_found_in_trash' => __('No Organizations found in Trash', 'your_text_domain'),
+    'parent_item_colon' => '',
+    'menu_name' => __('Organizations', 'your_text_domain')
+
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => _x( 'organization', 'URL slug', 'your_text_domain' ) ),
+    'capability_type' => 'page',
+    'has_archive' => true,
+    'hierarchical' => true,
+    'menu_position' => null,
+    'menu_icon' => 'dashicons-groups',
+    'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' )
+  );
+  register_post_type('pp-organization', $args);
+}
+add_action( 'init', 'custom_post_type_organization' );

@@ -1,0 +1,72 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+// .site {
+//     max-width: 400px;
+//     margin:0 auto;
+// }
+
+/* 400 =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+
+.social-links {
+    li {
+        margin:0 10px;
+    }
+}
+
+// 6. LAYOUT 				==============================
+
+//========================
+// Header
+//========================
+.utility-navigation {
+    p {
+        a {
+            @include font-size(15);
+        }
+    }
+}
+
+.site-branding {
+    .site-title {
+        padding: 10px;
+        width: 370px;
+        height: 104px;
+        a {
+            width: 370px;
+            height: 104px;
+            background-size: 370px 104px;
+        }
+    }
+}
+
+//========================
+// Footer
+//========================
+.footer {
+    .footer-inner {
+        .footer-social {
+            .social-links {
+                li {
+                    margin:0 15px;
+                }
+            }
+        }
+    }
+}
+
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================

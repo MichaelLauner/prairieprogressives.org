@@ -1,0 +1,167 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+// .site {
+//     max-width: 480px;
+//     margin:0 auto;
+// }
+
+/* 480 =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+// 6. LAYOUT 				==============================
+
+//========================
+// Providers Page
+//========================
+.provider-list {
+    margin-bottom: 25px;
+    max-width: 440px;
+    margin:0 auto 25px auto;
+}
+.provider-card {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px 15px 35px 15px;
+    margin:5px;
+    width: 210px;
+    min-height: 390px;
+    position: relative;
+    .provider-card-inner {
+        height: 100%;
+        display: block;
+        width: 100%;
+        position: relative;
+        .provider-image {
+            max-width: 100%;
+            float: none;
+            margin-right:0;
+            margin-bottom: 5px;
+            img {
+                width: 100%;
+            }
+        }
+        .provider-card-text {
+            display: block;
+            h6 {
+                margin-top:5px;
+                min-height: 97px;
+            }
+            p {
+                margin-bottom: 15px;
+                line-height: 1.2;
+                min-height: 80px;
+            }
+            .link-text {
+                position: absolute;
+                bottom:-20px;
+                box-sizing: border-box;
+                width: 100%;
+            }
+        }
+    }
+}
+a.provider-card {
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+//========================
+// Location Page
+//========================
+.location-list {
+    max-width: 440px;
+    margin:0 auto;
+    .location-card {
+        display: block;
+        box-sizing: border-box;
+        margin:5px;
+        position: relative;
+        padding: 15px 15px 35px 15px;
+        max-width: 440px;
+        .location-card-inner {
+            height: 100%;
+            display: block;
+            position: relative;
+            .location-image {
+                max-width: 100%;
+                float: none;
+                margin-right:0;
+                margin-bottom: 5px;
+            }
+            .location-card-text {
+                display: block;
+                h6 {
+                    margin-top:5px;
+                }
+                .link-text {
+                    position: absolute;
+                    bottom:-20px;
+                    box-sizing: border-box;
+                    width: 100%;
+                }
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+//========================
+// Service Page
+//========================
+.service-list {
+    max-width: 440px;
+    margin:0 auto;
+    .service-card {
+        display: block;
+        box-sizing: border-box;
+        margin:5px;
+        position: relative;
+        padding: 15px 15px 35px 15px;
+        .service-card-inner {
+            height: 100%;
+            display: block;
+            position: relative;
+            .service-image {
+                max-width: 100%;
+                float: none;
+                margin-right:0;
+                margin-bottom: 5px;
+            }
+            .service-card-text {
+                display: block;
+                h6 {
+                    margin-top:5px;
+                }
+                .link-text {
+                    position: absolute;
+                    bottom:-20px;
+                    box-sizing: border-box;
+                    width: 100%;
+                }
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================

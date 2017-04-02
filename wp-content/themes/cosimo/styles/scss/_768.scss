@@ -1,0 +1,102 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+// .site {
+//     max-width: 768px;
+//     margin:0 auto;
+// }
+
+/* 768 =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+
+.acf-map {
+    display: block;
+}
+
+// 6. LAYOUT 				==============================
+
+//========================
+// Locations Page
+//========================
+.page-title-logo {
+    display: block;
+    @include hide-text();
+    margin:0;
+    float: right;
+}
+
+.page-title-logo-follow {
+    text-align: left;
+    padding: 20px 0;
+}
+
+//========================
+// Provider Page
+//========================
+.provider-filter {
+    .provider-filter-select {
+        margin-right: 1%;
+        width: 49%;
+        float: left;
+    }
+}
+
+.provider-list {
+    max-width: 660px;
+}
+
+//========================
+// Location Page
+//========================
+.location-filter {
+    .location-filter-select {
+        width: 49%;
+        float: left;
+        margin-right: 1%;
+    }
+}
+
+//========================
+// Services Page
+//========================
+.featured-services {
+    .featured-service {
+        margin:0 10px;
+        max-width: 31.3%;
+        float: left;
+        margin:0 1%;
+        h5 {
+            margin-top: 10px;
+        }
+    }
+}
+
+//========================
+// Patients / Visitors
+//========================
+.featured-boxes {
+    margin-bottom: 25px;
+    .featured-box {
+        width: 31.3%;
+        margin-right: 2%;
+        float: left;
+        img {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================

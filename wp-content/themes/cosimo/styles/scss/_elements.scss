@@ -1,0 +1,711 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Elements =================================================== */
+
+.group:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+/* Buttons =================================================== */
+
+// Smoother color transition for links
+a {
+    transition: all 0.3s ease;
+}
+
+.btn a, a.btn, .gform_button {
+    display: inline-block;
+    *display: inline;
+    /* IE7 inline-block hack */
+    *zoom: 1;
+    padding: 12px 20px;
+    margin-bottom: 0;
+    font: {
+    weight: bold;
+    family: $basefont;
+    }
+    @include font-size(16);
+    line-height: $baselineheight;
+    color: $buttoncolor;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #fff;
+    @include rounded(15px);
+    cursor: pointer;
+    color:$crmc-blue !important;
+    border:2px solid $crmc-blue;
+    text-transform: uppercase;
+    &:after {
+        content: ' >';
+    }
+    &:hover {
+        color:#fff !important;
+        background-color: #5e9cae;
+        text-decoration: none;
+    }
+}
+
+// FIGURES & IMAGES =============================================================================
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.clear {
+	clear:both;
+	display:block;
+	//font-size:0; height:0;
+	//line-height:0; width:100%;
+	//overflow: hidden;
+}
+
+.entry-content,
+.site-main {
+    img {
+        border:1px solid #dee1e3;
+        box-sizing: border-box;
+    }
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+   outline: 0;
+}
+
+.text-filter {
+    margin:0 10px;
+    .input-filter {
+        padding: 20px;
+        margin:0 0 25px 0;
+        box-sizing: border-box;
+    }
+}
+
+//==================================
+// Image Stuff
+//==================================
+img {
+	*width: inherit;
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+
+.crmg-logo {
+    margin:0 20px;
+    img {
+        border:none;
+        display: block;
+        margin:0 auto 25px auto;
+        max-width: 320px;
+    }
+}
+
+.crmg-profile-photo {
+    img {
+        display: block;
+        margin:0 auto;
+    }
+}
+
+//==================================
+// Search Box
+//==================================
+.searchresults-searchbar {
+    form {
+        margin:15px;
+		display: flex;
+        label {
+            width: 100%;
+            input {
+                padding: 20px;
+            }
+        }
+        input {
+            padding: 20px;
+            margin-bottom: 0;
+            height: 60px;
+        }
+        .search-submit {
+            background: $crmc-green;
+            color:#fff;
+			line-height: 60px;
+			padding: 0 20px;
+        }
+    }
+}
+
+//==================================
+// Gallery Layout
+//==================================
+.gallery {
+    display: flex;
+	flex-wrap: wrap;
+	.gallery-item {
+		flex: 1;
+		min-width: 25%;
+		.gallery-icon {
+	        margin:10px;
+			img {
+				display: block;
+				margin:0 auto;
+			}
+	    }
+	}
+    .wp-caption-text, .gallery-caption {
+        text-align: center;
+    }
+}
+
+//==================================
+// Social Media Links
+//==================================
+.social-links {
+    margin:0 ;
+    padding: 0;
+    li {
+        float: left;
+        list-style: none;
+        margin:0 5px;
+        padding: 0;
+        a {
+            background: url(../images/social-icons-blue.png) #fff;
+            display: block;
+            width: 39px;
+            height: 39px;
+            @include hide-text();
+            &:hover {
+                background-color: $crmc-yellow;
+                cursor: pointer;
+            }
+        }
+    }
+    li.youtube {
+        a {
+
+        }
+    }
+    li.facebook {
+        a {
+            background-position: -52px 0;
+        }
+    }
+    li.google {
+        a {
+            background-position: -101px 0;
+        }
+    }
+    li.pinterest {
+        a {
+            background-position: -155px 0;
+        }
+    }
+    li.twitter {
+        a {
+            background-position: -206px 0;
+        }
+    }
+}
+
+//==================================
+//Nav XT
+//==================================
+.wp-pagenavi {
+	min-height: 50px;
+  	margin-bottom: 25px;
+	.pages,
+	.page,
+	.nextpostslink,
+	.previouspostslink,
+  .extend,
+  .last  {
+		background: $linkcolor;
+		@include rounded(3px);
+		border:none;
+		color:#fff;
+		display: block;
+		line-height: 50px;
+		float: left;
+		padding: 0 15px;
+		margin:0 5px 5px 0;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	a.page,
+	.nextpostslink,
+	.previouspostslink {
+		&:hover {
+			background: $crmc-blue;
+			text-decoration: none;
+		}
+	}
+	.current {
+		background: $crmc-blue;
+		@include rounded(3px);
+		border:none;
+		color:#fff;
+		display: block;
+		line-height: 50px;
+		float: left;
+		padding: 0 15px;
+		margin:0 5px 0 0;
+		text-transform: uppercase;
+	}
+}
+
+//==================================
+// ACF Maps
+//==================================
+.acf-map {
+	width: 100%;
+	height: 275px;
+	border: #ccc solid 1px;
+	margin: 0 0 25px 0;
+    display: none;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}
+
+//==================================
+// Widgets
+//==================================
+.widget {
+    background: #dee1e3;
+    border-top: 15px solid $crmc-green;
+    h2.widget-title {
+        background: url(../images/sidebar-arrow.png) 20px 0 no-repeat;
+        padding: 20px 25px 0 25px;
+        margin-bottom: 0;
+        border-left:1px solid #fff;
+        border-right:1px solid #fff;
+        @include font-size(40);
+    }
+    ul {
+        padding: 0 25px 20px 25px;
+        border-left:1px solid #fff;
+        border-right:1px solid #fff;
+        border-bottom:1px solid #fff;
+        margin:0;
+        li {
+            list-style: none;
+            font-weight: bold;
+            @include font-size(20);
+            line-height: 1.5;
+            a {
+                color:#005b82;
+            }
+            ul {
+                margin-left: 20px;
+                li {
+                    font-weight: normal;
+                    @include font-size(16);
+                }
+            }
+        }
+    }
+}
+
+//==================================
+// HAMBURGER ICONS COMPONENT
+//==================================
+
+// vars
+
+$button-width: 30px;                    // The width of the button area
+$button-height: 30px;                   // The height of the button area
+$bar-thickness: 4px;                    // The thickness of the button bars
+$button-pad: 0px;                      // The left/right padding between button area and bars.
+$button-bar-space: 4px;                // The spacing between button bars
+$button-transistion-duration: 0.3s;     // The transition duration
+
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `c-hamburger` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: $button-width;
+  height: $button-height;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background $button-transistion-duration;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: ($button-height / 2) - ($bar-thickness / 2);
+  left: $button-pad;
+  right: $button-pad;
+  height: $bar-thickness;
+  background: $crmc-teal;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: $bar-thickness;
+  background-color: $crmc-teal;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -$bar-thickness - $button-bar-space;
+}
+
+.c-hamburger span::after {
+  bottom: -$bar-thickness - $button-bar-space;
+}
+
+/**
+ * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ */
+
+.c-hamburger--htx {
+  background-color: transparent;
+}
+
+.c-hamburger--htx span {
+  transition: background 0s $button-transistion-duration;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: $button-transistion-duration, $button-transistion-duration;
+  transition-delay: $button-transistion-duration, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+
+.toggled .c-hamburger--htx {
+  background-color: transparent;
+}
+
+.toggled .c-hamburger--htx span {
+  background: none;
+}
+
+.toggled .c-hamburger--htx span::before {
+  top: 0;
+  transform: rotate(45deg);
+  background-color: $crmc-teal;
+}
+
+.toggled .c-hamburger--htx span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+  background-color: $crmc-teal;
+}
+
+.toggled .c-hamburger--htx span::before,
+.toggled .c-hamburger--htx span::after {
+  transition-delay: 0s, $button-transistion-duration;
+}
+
+
+/**
+ * Loading Icon
+ */
+@-webkit-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@-webkit-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@-moz-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@-ms-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@-moz-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@-webkit-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@-o-keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+@keyframes uilsquare {
+  0% {
+    background-color: $crmc-blue;
+  }
+  1% {
+    background-color: $crmc-yellow;
+  }
+  11% {
+    background-color: $crmc-yellow;
+  }
+  21% {
+    background-color: $crmc-blue;
+  }
+  100% {
+    background-color: $crmc-blue;
+  }
+}
+.uil-squares-css {
+  background: none;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin:0 auto;
+}
+.uil-squares-css div {
+  position: absolute;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  background-color: $crmc-blue;
+}
+.uil-squares-css div > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -ms-animation: uilsquare 1s linear infinite;
+  -moz-animation: uilsquare 1s linear infinite;
+  -webkit-animation: uilsquare 1s linear infinite;
+  -o-animation: uilsquare 1s linear infinite;
+  animation: uilsquare 1s linear infinite;
+  width: 40px;
+  height: 40px;
+}
+.uil-squares-css > div:nth-of-type(1) {
+  top: 30px;
+  left: 30px;
+}
+.uil-squares-css > div:nth-of-type(1) > div {
+  -ms-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.uil-squares-css > div:nth-of-type(2) {
+  top: 30px;
+  left: 80px;
+}
+.uil-squares-css > div:nth-of-type(2) > div {
+  -ms-animation-delay: 0.125s;
+  -moz-animation-delay: 0.125s;
+  -webkit-animation-delay: 0.125s;
+  -o-animation-delay: 0.125s;
+  animation-delay: 0.125s;
+}
+.uil-squares-css > div:nth-of-type(3) {
+  top: 30px;
+  left: 130px;
+}
+.uil-squares-css > div:nth-of-type(3) > div {
+  -ms-animation-delay: 0.25s;
+  -moz-animation-delay: 0.25s;
+  -webkit-animation-delay: 0.25s;
+  -o-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+.uil-squares-css > div:nth-of-type(4) {
+  top: 80px;
+  left: 130px;
+}
+.uil-squares-css > div:nth-of-type(4) > div {
+  -ms-animation-delay: 0.375s;
+  -moz-animation-delay: 0.375s;
+  -webkit-animation-delay: 0.375s;
+  -o-animation-delay: 0.375s;
+  animation-delay: 0.375s;
+}
+.uil-squares-css > div:nth-of-type(5) {
+  top: 130px;
+  left: 130px;
+}
+.uil-squares-css > div:nth-of-type(5) > div {
+  -ms-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.uil-squares-css > div:nth-of-type(6) {
+  top: 130px;
+  left: 80px;
+}
+.uil-squares-css > div:nth-of-type(6) > div {
+  -ms-animation-delay: 0.625s;
+  -moz-animation-delay: 0.625s;
+  -webkit-animation-delay: 0.625s;
+  -o-animation-delay: 0.625s;
+  animation-delay: 0.625s;
+}
+.uil-squares-css > div:nth-of-type(7) {
+  top: 130px;
+  left: 30px;
+}
+.uil-squares-css > div:nth-of-type(7) > div {
+  -ms-animation-delay: 0.75s;
+  -moz-animation-delay: 0.75s;
+  -webkit-animation-delay: 0.75s;
+  -o-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+.uil-squares-css > div:nth-of-type(8) {
+  top: 80px;
+  left: 30px;
+}
+.uil-squares-css > div:nth-of-type(8) > div {
+  -ms-animation-delay: 0.875s;
+  -moz-animation-delay: 0.875s;
+  -webkit-animation-delay: 0.875s;
+  -o-animation-delay: 0.875s;
+  animation-delay: 0.875s;
+}

@@ -1,0 +1,234 @@
+// ==========================================================
+
+// 320 and Up
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Print =================================================== */
+
+// 1. ROOT 					==============================
+
+* {
+background : transparent !important;
+color : black !important;
+box-shadow : none !important;
+text-shadow : none !important;
+filter : none !important;
+-ms-filter : none !important; }
+
+@page {
+margin : 0.5cm; }
+
+// 2. TYPOGRAPHY 			==============================
+
+h2, h3 {
+orphans : 3;
+widows : 3;
+page-break-after : avoid; }
+
+p {
+orphans : 3;
+widows : 3; }
+
+pre, blockquote {
+border : 1px solid $grey;
+page-break-inside : avoid; }
+
+abbr[title]:after {
+content: " (" attr(title) ")"; }
+
+// 3. COLOUR 				==============================
+
+a, a:visited {
+text-decoration : underline; }
+
+p a[href]:after {
+    content : " (" attr(href) ")";
+}
+
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+content : ""; }
+
+// 4. TEXTURE 				==============================
+
+img {
+max-width : 100% !important;
+page-break-inside : avoid; }
+
+thead {
+display : table-header-group; }
+
+tr {
+page-break-inside : avoid; }
+
+// 5. ELEMENTS 				==============================
+// 6. LAYOUT 				==============================
+
+
+//========================
+// Providers Page
+//========================
+.provider-list {
+    margin-bottom: 25px;
+    max-width: 100%;
+    margin:0 auto 25px auto;
+    .provider-card {
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        position: relative;
+        padding: 15px 15px 35px 15px;
+        margin:5px;
+        width: 210px;
+        min-height: 375px;
+        position: relative;
+        .provider-card-inner {
+            height: 100%;
+            display: block;
+            width: 100%;
+            position: relative;
+            .provider-image {
+                max-width: 100%;
+                float: none;
+                margin-right:0;
+                margin-bottom: 5px;
+                img {
+                    width: 100%;
+                }
+            }
+            .provider-card-text {
+                display: block;
+                h6 {
+                    margin-top:5px;
+                    min-height: 74px;
+                }
+                p {
+                    margin-bottom: 15px;
+                }
+                .link-text {
+                    position: absolute;
+                    bottom:-20px;
+                    box-sizing: border-box;
+                    width: 100%;
+                }
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    .provider-card-no-button {
+        padding: 15px;
+    }
+}
+
+//========================
+// Location Page
+//========================
+.location-list {
+    max-width: 100%;
+    margin:0 auto;
+    .location-card {
+        display: block;
+        box-sizing: border-box;
+        margin:5px;
+        position: relative;
+        padding: 10px;
+        .location-card-inner {
+            height: 100%;
+            display: block;
+            position: relative;
+            .location-image {
+                max-width: 150px;
+                float: none;
+                margin-right:0;
+                margin-bottom: 5px;
+            }
+            .location-card-text {
+                display: block;
+                h6 {
+                    min-height: auto;
+                    margin-top:5px;
+                }
+                .link-text {
+                    display: none;
+                }
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+//========================
+// Service Page
+//========================
+.service-list {
+    max-width: 100%;
+    margin:0 auto;
+    .service-card {
+        display: block;
+        box-sizing: border-box;
+        margin:5px;
+        position: relative;
+        padding: 10px;
+        .service-card-inner {
+            height: 100%;
+            display: block;
+            position: relative;
+            .service-image {
+                max-width: 150px;
+                float: none;
+                margin-right:0;
+                margin-bottom: 5px;
+            }
+            .service-card-text {
+                display: block;
+                h6 {
+                    min-height: auto;
+                    margin-top:5px;
+                }
+                .link-text {
+                    display: none;
+                }
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.crmg-profile-photo {
+    width: 125px;
+    margin:0;
+}
+
+.crmg-logo {
+    width: 125px;
+}
+
+.text-filter,
+.provider-filter,
+.header,
+.footer
+{
+    display: none;
+}
+
+.single-crmc-physician {
+    .one_fourth {
+        width: 20%;
+        margin-right: 2%;
+        float: left;
+    }
+    .three_fourth {
+        width: 78%;
+        float: left;
+    }
+}

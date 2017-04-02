@@ -1,0 +1,242 @@
+// ==========================================================
+
+// 320 and Up (by Andy Clarke), Bones, Bootstrap... I've Created a Monster
+
+// ==========================================================
+
+/* Typography =================================================== */
+
+@font-face {
+    font-family: 'angie_regularregular';
+    src: url('../fonts/angie-regular-webfont.woff2') format('woff2'),
+         url('../fonts/angie-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// HEADINGS ====================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin : 0;
+    font-family : $baseheadingfont;
+    font-weight : $baseheadingfontweight;
+    color : $baseheadingfontcolor;
+    text-rendering : optimizelegibility;
+}
+
+h1 small,
+h2 small {
+    font-weight : normal;
+    color : $lightgrey;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+    margin-bottom : 20px;
+    @include font-size(30); //56
+    line-height : 1.1;
+    color:$crmc-blue;
+}
+
+h3,
+.h3 {
+    margin-bottom : 20px;
+    @include font-size(30); //36
+    line-height : 1.2;
+    color:$crmc-blue;
+    background: url(../images/small-dot.png) repeat-x bottom;
+    padding-bottom: 15px;
+}
+
+h4,
+.h4 {
+    margin-bottom : 15px;
+    @include font-size(30); //36
+    line-height : 1.2;
+    color:$crmc-blue;
+}
+
+h5,
+.h5 {
+    margin-bottom : 15px;
+    @include font-size(26);
+    line-height : 1.2;
+    color:$crmc-teal;
+}
+
+h6,
+.h6 {
+    margin-bottom : 15px;
+    @include font-size(20);
+    line-height : 1.2;
+    color:$crmc-blue;
+    font-family: $basefont;
+}
+
+// TYPOGRAPHY ====================================================
+
+hr {
+    margin:20px 0;
+    height: 8px;
+    border: none;
+    //background: url(../images/small-dot.png) repeat-x;
+    border-top: 1px solid $crmc-blue;
+    clear:both;
+}
+
+p,
+ol,
+ul,
+dl,
+address {
+	margin-bottom : 20px;
+	@include font-size(16);
+	line-height : 1.6;
+	color:$crmc-blue;
+    a {
+        color:$crmc-teal;
+    }
+}
+
+address {
+    padding:0 50px;
+    font-style: italic;
+}
+
+small {
+@include font-size(12); }
+
+.content-area {
+	ul {
+        margin : 0 0 20px 40px;
+		li {
+            color:$crmc-blue;
+            list-style: square;
+		}
+	}
+	ol {
+        margin : 0 0 20px 40px;
+	}
+}
+
+li ul,
+li ol {
+    margin : 0;
+    @include font-size(16);
+}
+
+// blockquote
+
+blockquote  {
+    border-top: 6px solid $crmc-teal;
+    border-bottom: 3px solid $crmc-teal;
+    margin : 0 0 20px 0;
+    padding: 30px;
+    color:$crmc-teal;
+    background: #fff;
+    @include font-size(33);
+    line-height: 1.25;
+    position: relative;
+    z-index: 0;
+    h1,h2,h3,h4,h5,h6,p {
+        color:$crmc-teal;
+    }
+	p {
+ 		padding:0 !important;
+ 		@include font-size(18);
+	}
+}
+
+q {
+quotes : none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+content : '';
+content : none; }
+
+cite {
+font-style : normal; }
+
+// definition lists
+
+dl,
+dd {
+margin-bottom : $baselineheight;  }
+
+dt {
+font-weight : bold; }
+
+.dl-horizontal {
+
+dt {
+float : left;
+clear : left;
+width : 20.25%;
+text-align : right; }
+
+dd {
+margin-left : 22.78%; }
+}
+
+// text-level
+
+abbr[title] {
+border-bottom : 1px dotted $bordercolor;
+cursor : help; }
+
+b, strong {
+font-weight : bold; }
+
+em {
+    font-style: italic;
+}
+
+dfn {
+font-style : italic; }
+
+ins {
+background-color : lighten($basecolor, 75%);
+color : $textcolor;
+text-decoration : none; }
+
+mark {
+background-color : lighten($basecolor, 75%);
+color : $textcolor;
+font-style : italic;
+font-weight : bold; }
+
+pre,
+code,
+kbd,
+samp {
+font-family : $codefont;
+@include font-size(14);
+line-height : $baselineheight; }
+
+pre {
+white-space : pre;
+white-space : pre-wrap;
+word-wrap : break-word; }
+
+sub,
+sup {
+position : relative;
+@include font-size(12);
+line-height : 0;
+vertical-align : baselineheight; }
+
+sup {
+top : -.5em; }
+
+sub {
+bottom : -.25em; }
